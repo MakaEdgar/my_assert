@@ -121,7 +121,7 @@
             oss << BOLD_STR(LOCATION ": ") << RED_STR("assertion check failed: ") << text \
                 << std::endl;                                                             \
             std::cerr << oss.str();                                                       \
-            throw MyAssertException{};                                                    \
+            throw my_assert::MyAssertException{};                                         \
         }                                                                                 \
     } while (false)
 
