@@ -18,7 +18,7 @@ This library contains `MYASSERT`, `MYWARNING` and `MYDEBUG` macros for additiona
 - Copy header to the project folder
 - Use this snippet instead of regular include
 ```cpp
-#define ENABLE_MY_ASSERTS  // comment to replace with standart asserts (no header needed)
+#define ENABLE_MY_ASSERTS  // comment for standart asserts (no header needed)
 #ifdef ENABLE_MY_ASSERTS
 #include "my_assert.h"
 #else
