@@ -1,5 +1,5 @@
 # My Assertion Lib
-C++ assert macros for headerless contest systems: just comment one line before sending!
+C++ assert macros for headerless contest systems: just comment one line before sending! \
 Makarov Edgar, 2024 (c)
 
 ## Summary
