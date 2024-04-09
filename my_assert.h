@@ -152,4 +152,7 @@
         }                                                                                    \
     } while (false)
 
+
+namespace my_assert {
 class MyAssertException : public std::exception {};
+}  // namespace my_assert
