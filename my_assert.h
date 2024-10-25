@@ -175,7 +175,7 @@ namespace my_assert
 class MyAssertException : public std::runtime_error
 {
 public:
-    MyAssertException(const std::string& message, const std::string& location = "")
+    explicit MyAssertException(const std::string& message, const std::string& location = "")
         : std::runtime_error(compose_message(message, location))
     {
     }
