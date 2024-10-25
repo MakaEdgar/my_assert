@@ -22,11 +22,15 @@ This library contains `MYASSERT`, `MYWARNING` and `MYDEBUG` macros for additiona
 #ifdef ENABLE_MY_ASSERTS
 #include "my_assert.h"
 #else
+#ifndef MYASSERTSTUB
+#define MYASSERTSTUB
 #include <cassert>
 #define MYDEBUG(expr) void(0)
 #define MYWARNING(condition) void(0)
 #define MYASSERT(condition, ...) assert((condition))
-#endif
+#define MYUNREACHABLE(...) assert(0)
+#endif // MYASSERTSTUB
+#endif // ENABLE_MY_ASSERTS
 ```
 
 ## Documentation
@@ -36,23 +40,31 @@ MYDEBUG(expression);
 // file_path:line_num: debug: expression = value
 ```
 
-- Warning if condition is not met:
+- Warnings: print message if condition is not met
 ```cpp
 MYWARNING(condition);
 // file_path:line_num: warning check failed: condition
 ```
 
-- Assertions:
+- Assertions: print message if false and throw MyAssertException
 ```cpp
-MYASSERT(condition);
 // file_path:line_num: assertion check failed: condition
-```
-```cpp
-MYASSERT(condition, text);
+MYASSERT(condition);
+
 // file_path:line_num: assertion check failed: text
+MYASSERT(condition, text);
 ```
 
-- Catch assertion failure inside algorithm (useful for stress testing):
+- Unreacheable code: print message and throw MyAssertException  
+```cpp
+// file_path:line_num: unreacheable code.
+MYUNREACHEABLE();
+
+// file_path:line_num: unreacheable code. text
+MYUNREACHEABLE(text);
+```
+
+- Catch assertion failure (e.g., for algorithms stress testing):
 ```cpp
 try {
   output = run_test_case(input)
