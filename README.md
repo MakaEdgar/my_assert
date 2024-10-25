@@ -3,7 +3,7 @@ C++ assert macros for headerless contest systems: just comment one line before s
 Makarov Edgar, 2024 (c)
 
 ## Summary
-This library contains `MYASSERT`, `MYWARNING` and `MYDEBUG` macros for additional debug information.
+This library contains `MYASSERT`, `MYWARNING`, `MYDEBUG` and `MYUNREACHEABLE` macros for additional debug information.
 
 **Benefits over regular assert**:
  - Prints user message and debug information to std::cerr (with coloring).
