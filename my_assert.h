@@ -17,16 +17,16 @@
 // - Use this snippet instead of include
 /*
     #ifdef ENABLE_MY_ASSERTS
-    #include "my_assert.h"
+    #    include "my_assert.h"
     #else
-    #ifndef MYASSERTSTUB
-    #define MYASSERTSTUB
-    #include <cassert>
-    #define MYDEBUG(expr) void(0)
-    #define MYWARNING(condition) void(0)
-    #define MYASSERT(condition, ...) assert((condition))
-    #define MYUNREACHABLE(...) assert(0)
-    #endif // MYASSERTSTUB
+    #    ifndef MYASSERTSTUB
+    #        define MYASSERTSTUB
+    #        include <cassert>
+    #        define MYDEBUG(expr) void(0)
+    #        define MYWARNING(condition) void(0)
+    #        define MYASSERT(condition, ...) assert((condition))
+    #        define MYUNREACHABLE(...) assert(false)
+    #    endif // MYASSERTSTUB
     #endif // ENABLE_MY_ASSERTS
 */
 //
