@@ -16,6 +16,7 @@
 // - Copy header to the project folder
 // - Use this snippet instead of include
 /*
+    #define ENABLE_MY_ASSERTS 
     #ifdef ENABLE_MY_ASSERTS
     #    include "my_assert.h"
     #else
@@ -25,7 +26,7 @@
     #        define MYDEBUG(expr) void(0)
     #        define MYWARNING(condition) void(0)
     #        define MYASSERT(condition, ...) assert((condition))
-    #        define MYUNREACHABLE(...) assert(false)
+    #        define MYUNREACHABLE(...) exit(42)
     #    endif // MYASSERTSTUB
     #endif // ENABLE_MY_ASSERTS
 */
